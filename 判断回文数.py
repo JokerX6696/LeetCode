@@ -16,12 +16,23 @@
 # -231 <= x <= 231 - 1
 # 进阶：你能不将整数转为字符串来解决这个问题吗？
 class Solution:
+    def test(self,test_list):
+        all_len = len(test_list)
+        l, r = 0, all_len-1
+        while True:
+            if r <= l:
+                return True
+            else:
+                if test_list[l] != test_list[r]:
+                    return False
+            l += 1
+            r -= 1
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
         
         n = 1
-        while n < x:
+        while n <= x:
             n *= 10
         n = n / 10
 
@@ -32,25 +43,26 @@ class Solution:
             test_list.append(k)
             n = n / 10
 
-        if len(test_list) % 2 == 0:
-            a = 0
-            for i in test_list:
-                a ^= i
-            if a == 0:
-                return True
-            else:
-                return False
-        else:
-            a = 0
-            b = test_list[int(len(test_list)/2)] # 这里 索引 从0 开始 所以不再 + 1
-            for i in test_list:
-                a ^= i
-            if a == b:
-                return True
-            else:
-                return False
+        return self.test(test_list)
+        # if len(test_list) % 2 == 0:
+        #     a = 0
+        #     for i in test_list:
+        #         a ^= i
+        #     if a == 0:
+        #         return True
+        #     else:
+        #         return False
+        # else:
+        #     a = 0
+        #     b = test_list[int(len(test_list)/2)] # 这里 索引 从0 开始 所以不再 + 1
+        #     for i in test_list:
+        #         a ^= i
+        #     if a == b:
+        #         return True
+        #     else:
+        #         return False
 
-intNum = 12344321
+intNum = 10
 test = Solution()
 b = test.isPalindrome(intNum)
 print(b)
