@@ -14,6 +14,9 @@
 
 
 class Solution:
+    __name__ = '测试函数'
+    def __init__(self):
+        print(self.__name__,'正在继承 Solution,请稍后')
     def longestCommonPrefix(self, strs):
         # 确定最短字符串长度
         min_len = 200
