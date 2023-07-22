@@ -1,6 +1,6 @@
 class Cat:
     name = "cat"
-    def __init__(self,new='moren'):  
+    def __init__(self,new='moren',b='123'):  
         print('change')
         self.name = new
 
@@ -9,7 +9,7 @@ def p(a=1,b=2):
     print(ret)
 
 
-mao = Cat()
+mao = Cat(b=123)
 print(mao.name)
 
-p(b=5)
+p(b=5,a=2)
