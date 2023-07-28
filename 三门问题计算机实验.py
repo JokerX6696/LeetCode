@@ -3,7 +3,7 @@ import random
 door_num = 3
 car = 0;sheep = 0
 
-xhcs = 1000
+xhcs = 100
 for k in range(0,xhcs):
     car_in_num = random.randint(0, door_num-1)
     print("本次 车在 %d 号门" %car_in_num)
@@ -17,7 +17,7 @@ for k in range(0,xhcs):
     # 主持人在 未选择的两扇门中打开一扇有 羊的门
     index = []
     c = -1
-    for i in door:
+    for i in door: # 这里的 c 是 door 的下标
         c += 1
         if c == choice:
             continue
@@ -27,8 +27,10 @@ for k in range(0,xhcs):
             index.append(c)
     if len(index) == 1:
         host_open = index[0]
+        print("主持人只能打开 %d 号门" %index[0])
     else:
         host_open = index[random.randint(0, len(index)-1)]
+        print("主持人可以打开 %d 和 %d 号门" %(index[0],index[1]) )
     print("本次 主持人打开 %d 号门" %host_open)
     # 计算剩余 1 扇门有车的概率
     for i in range(0,door_num):
