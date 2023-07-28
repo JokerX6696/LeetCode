@@ -3,13 +3,13 @@ import random
 door_num = 3
 car = 0;sheep = 0
 
-xhcs = 100
+xhcs = 10000
 for k in range(0,xhcs):
     car_in_num = random.randint(0, door_num-1)
     print("本次 车在 %d 号门" %car_in_num)
     # 某门后有车 1 为 车
-    door = [0] * door_num
-    door[car_in_num] = 1
+    door = ['羊'] * door_num
+    door[car_in_num] = '车'
 
     # 随机选取一扇门
     choice = random.randint(0, door_num-1)
@@ -21,7 +21,7 @@ for k in range(0,xhcs):
         c += 1
         if c == choice:
             continue
-        elif door[c] == 1:
+        elif door[c] == '车':
             continue
         else:
             index.append(c)
@@ -36,7 +36,7 @@ for k in range(0,xhcs):
     for i in range(0,door_num):
         if i != choice and i != host_open:
             ret = door[i]
-    if ret == 1:
+    if ret == '车':
         car += 1
         print('玩家换门后获得汽车!')
     else:
@@ -45,5 +45,5 @@ for k in range(0,xhcs):
     print('-' *50)
 
 print("经过 %d 次实验" %xhcs)
-print("换门后 获得奖品的次数为 %d" %car)
-print("不换门 获得奖品的次数为 %d" %sheep)
+print("换门后 获得 汽车 的次数为 %d" %car)
+print("不换门 获得 汽车 的次数为 %d" %sheep)
