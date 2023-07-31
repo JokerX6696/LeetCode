@@ -7,7 +7,7 @@ xhcs = 10000
 for k in range(0,xhcs):
     car_in_num = random.randint(0, door_num-1)
     print("本次 车在 %d 号门" %car_in_num)
-    # 某门后有车 1 为 车
+    # 某门后有车 
     door = ['羊'] * door_num
     door[car_in_num] = '车'
 
@@ -47,3 +47,7 @@ for k in range(0,xhcs):
 print("经过 %d 次实验" %xhcs)
 print("换门后 获得 汽车 的次数为 %d" %car)
 print("不换门 获得 汽车 的次数为 %d" %sheep)
+
+
+
+
