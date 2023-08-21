@@ -1,3 +1,4 @@
+# 三门问题 使用计算机模拟多次实验结果
 import random
 
 door_num = 3
