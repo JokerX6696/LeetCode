@@ -44,7 +44,7 @@ for k in range(0,xhcs):
         sheep += 1
         print('玩家换门后没有获得汽车!')
     print('-' *50)
-
+0
 print("经过 %d 次实验" %xhcs)
 print("换门后 获得 汽车 的次数为 %d" %car)
 print("不换门 获得 汽车 的次数为 %d" %sheep)
